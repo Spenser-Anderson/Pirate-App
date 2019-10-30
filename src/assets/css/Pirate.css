@@ -1,0 +1,23 @@
+main {
+  font-family: 'Trade Winds', cursive;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.5rem;
+  align-items: center;
+  border-bottom: 1px dotted #007eb6;
+  margin: 0 2rem;
+}
+
+main ul {
+  list-style: none;
+  padding: 0;
+}
+
+article {
+  line-height: 1.8;
+}
+
+h2,
+h3 {
+  font-weight: normal;
+}
