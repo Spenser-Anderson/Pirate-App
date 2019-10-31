@@ -2,13 +2,30 @@ import React, { Component } from 'react';
 import Pirate from './components/Pirate';
 import Header from './components/Header';
 import PirateForm from './components/PirateForm';
-
+import { base } from './base';
 import piratesFile from './data/sample-pirates-array';
+
 
 class App extends Component {
   state = {
-    pirates: piratesFile,
+    pirates: [],
   };
+
+  componentDidMount() {
+    this.ref = base.syncState(`pirates`, {
+      context: this,
+      state: 'pirates',
+      asArray: true,
+    });
+  }
+  
+  loadSamples = () => {
+    this.setState({ pirates: piratesFile });
+  };
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
 
   render() {
     const pirateCalls = [
