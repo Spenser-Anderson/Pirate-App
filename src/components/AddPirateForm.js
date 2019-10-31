@@ -14,6 +14,7 @@ class AddPirateForm extends Component {
       weapon: this.weaponRef.current.value,
     };
     this.props.addPirate(pirate);
+    event.currentTarget.reset();
   };
 
   render() {

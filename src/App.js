@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Pirate from './components/Pirate';
 import Header from './components/Header';
 import PirateForm from './components/PirateForm';
 
 import piratesFile from './data/sample-pirates-array';
 
-class App extends React.Component {
+class App extends Component {
   state = {
     pirates: piratesFile,
   };
@@ -19,13 +19,18 @@ class App extends React.Component {
 
     const addPirate = pirate => {
       console.log(pirate);
-      //take a copy of the current state and put it into newPirates var
-      const newPirates = [...this.state.pirates];
+      const newPirates = [pirate, ...this.state.pirates];
       console.log(newPirates);
-      newPirates.unshift(pirate);
-      console.log(newPirates);
-      //set state pirates with var pirates
+      // newPirates.unshift(pirate); we're able to use this cause the of the spred addition in the const above. 
       this.setState({ pirates: newPirates });
+    };
+
+    const removePirate = index => {
+      console.log(index);
+      const pirates = [...this.state.pirates];
+      pirates.splice(index, 1);
+      console.log(pirates);
+      this.setState({ pirates: pirates });
     };
 
     const randomize = () =>
@@ -35,8 +40,13 @@ class App extends React.Component {
       <>
         <Header title={randomize()} />
         <PirateForm addPirate={addPirate} />
-        {this.state.pirates.map(pirate => (
-          <Pirate key={pirate.id} tagline={randomize()} pirate={pirate} />
+        {this.state.pirates.map((pirate, index) => (
+          <Pirate 
+          key={index} 
+          index={index}
+          tagline={randomize()} 
+          pirate={pirate} 
+          removePirate={removePirate}/>
         ))}
       </>
     );

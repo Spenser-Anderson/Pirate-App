@@ -2,7 +2,11 @@ import React from 'react';
 import '../assets/css/Pirate.css';
 import avatar from '../assets/img/avatar.png';
 
-function Pirate({ tagline, pirate: { desc, name, year, weapon, vessel } }) {
+function Pirate({ 
+  removePirate,
+  index,
+  tagline, 
+  pirate: { desc, name, year, weapon, vessel } }) {
   return (
     <main>
       <aside className="pirate-data">
@@ -21,6 +25,7 @@ function Pirate({ tagline, pirate: { desc, name, year, weapon, vessel } }) {
       <article>
         <h2>"{tagline}"</h2>
         <p>{desc}</p>
+        <button onClick={() => removePirate(index)}>Remove</button>
       </article>
     </main>
   );
