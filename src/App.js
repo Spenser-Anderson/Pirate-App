@@ -32,6 +32,9 @@ class App extends Component {
       'Aaarg, belay that!',
       'Avast me hearties!',
       'Shiver me timbers!',
+      "I'm gonna take ya for a ride!",
+      'Bow down.',
+      "Nothin' personal kid",
     ];
 
     const addPirate = pirate => {

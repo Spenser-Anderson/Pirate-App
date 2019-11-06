@@ -4,8 +4,8 @@ import 'firebase/database';
 
 const config = {
   apiKey: 'AIzaSyAHnKw63CUBAqSuCREgils_waYJ0qwpGiU',
-  authDomain: 'daniel-deverell-pirates.firebaseapp.com',
-  databaseURL: 'https://daniel-deverell-pirates.firebaseio.com',
+  authDomain: 'pirate-database.firebaseapp.com',
+  databaseURL: 'https://pirate-database.firebaseio.com/',
 };
 
 const app = firebase.initializeApp(config);

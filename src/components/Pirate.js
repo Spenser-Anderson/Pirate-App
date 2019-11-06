@@ -1,12 +1,12 @@
 import React from 'react';
 import '../assets/css/Pirate.css';
-import avatar from '../assets/img/avatar.png';
+import avatar from '../assets/img/strawhat.jpg';
 
 function Pirate({ 
   removePirate,
   index,
   tagline, 
-  pirate: { desc, name, year, weapon, vessel } }) {
+  pirate: { desc, name, year, weapon, vessel, bounty } }) {
   return (
     <main>
       <aside className="pirate-data">
@@ -17,6 +17,7 @@ function Pirate({
           <li>
             <h3>{name}</h3>
           </li>
+          <li>Bounty: {bounty}</li>
           <li>Died: {year}</li>
           <li>Favorite weapon: {weapon}</li>
           <li>Sailed on: {vessel}</li>
